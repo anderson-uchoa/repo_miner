@@ -33,11 +33,7 @@ for gitURL in lines:
     
     print(str.format("Writing to '{commitsCSVFilePath}'...", commitsCSVFilePath=commitsCSVFilePath))
     for commit in RepositoryMining(downloadRepo).traverse_commits():
-        commitsFile.write(commit.hash + ';' 
-            + commit.author.name + ';' 
-            + commit.author.email + ';' 
-            + str(commit.author_date)
-            + '\n') 
+        commitsFile.write('"' + commit.hash + '","' + commit.author.name + '","' + commit.author.email + '","' + str(commit.author_date) + '"\n') 
     commitsFile.close()
     print(str.format("'{commitsCSVFilePath}' completed and closed.", commitsCSVFilePath=commitsCSVFilePath))
 
@@ -45,7 +41,7 @@ for gitURL in lines:
 
     print("Running PMD...")
     pmdCacheFile = './pmdCacheFile'
-    subprocess.run(str.format("pmd.bat -d {repo} -R rulesets/java/design.xml -f csv -reportfile {file} -cache {cache}", repo=newRepo, file=smellsCSVFilePath, cache=pmdCacheFile))
+    subprocess.run(str.format("pmd.bat -d {repo} -R rulesets/java/design.xml -f csv -reportfile {file} -cache {cache} -shortnames", repo=newRepo, file=smellsCSVFilePath, cache=pmdCacheFile))
     print(str.format("PMD complete. Data saved to '{smellsCSVFilePath}'.", smellsCSVFilePath=smellsCSVFilePath))
 
     #pmd.bat -d C:\REPOS\MGL843\Python_RepoDownloder\DUMP\repo1 -R rulesets/java/design.xml -f csv -reportfile C:\REPOS\MGL843\Python_RepoDownloder\DUMP\repo1_smells.csv -cache C:\REPOS\MGL843\Python_RepoDownloder\pmdCacheFile

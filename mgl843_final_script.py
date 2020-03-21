@@ -60,10 +60,10 @@ for gitURL in lines:
     subprocess.run(str.format("pmd.bat -d {repo} -R rulesets/java/design.xml -f csv -reportfile {file} -cache {cache} -shortnames", repo=downloadRepo, file=smellsCSVFilePath, cache=pmdCacheFile))
     print(str.format("PMD complete. Data saved to '{smellsCSVFilePath}'.", smellsCSVFilePath=smellsCSVFilePath))
 
-    # Get number of commits per author
-    nbCommitsPerAuthorFile = newRepo + '/' + projectName + '_nb_commits_per_author.csv'
-    print("Getting number of commits per author...")
-    subprocess.run(str.format("git shortlog -s -n --all --no-merges > {nbCommitsFile}.csv", nbCommitsFile=nbCommitsPerAuthorFile))
-    print(str.format("Data saved to '{nbCommitsFile}'.", nbCommitsFile=nbCommitsPerAuthorFile))
+    # Get number of commits per author (doesn't work right now)
+    # nbCommitsPerAuthorFile = newRepo + '/' + projectName + '_nb_commits_per_author.csv'
+    # print("Getting number of commits per author...")
+    # subprocess.run(str.format("git shortlog -s -n --all --no-merges > {nbCommitsFile}.csv", nbCommitsFile=nbCommitsPerAuthorFile))
+    # print(str.format("Data saved to '{nbCommitsFile}'.", nbCommitsFile=nbCommitsPerAuthorFile))
 
 print(str.format("All done! Check in '{repoDir}' directory.", repoDir=repo_dir))

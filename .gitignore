@@ -1,7 +1,3 @@
 pmdCacheFile
 .vscode/
-DUMP/gitRepo1_spark/spark_commits.csv
-DUMP/gitRepo1_spark/spark_nb_commits_per_author.csv
-DUMP/kafka/kafka_commits.csv
-DUMP/zookeeper/zookeeper_commits.csv
-DUMP/zookeeper/zookeeper_pmd_smells.csv
+DUMP/

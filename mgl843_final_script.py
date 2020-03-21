@@ -27,7 +27,7 @@ for gitURL in lines:
     projectName = p.parts[-1]
 
     # Setup directory names
-    newRepo = repo_dir + '/gitRepo' + str(repositoryCounter) + "_" + projectName
+    newRepo = repo_dir + '/' + projectName
     downloadRepo = newRepo + '/' + projectName + '_repo'
     repositoryCounter = repositoryCounter + 1
 
@@ -57,7 +57,7 @@ for gitURL in lines:
     smellsCSVFilePath = newRepo + '/' + projectName + '_pmd_smells.csv'
     print("Running PMD...")
     pmdCacheFile = './pmdCacheFile'
-    subprocess.run(str.format("pmd.bat -d {repo} -R rulesets/java/design.xml -f csv -reportfile {file} -cache {cache} -shortnames", repo=newRepo, file=smellsCSVFilePath, cache=pmdCacheFile))
+    subprocess.run(str.format("pmd.bat -d {repo} -R rulesets/java/design.xml -f csv -reportfile {file} -cache {cache} -shortnames", repo=downloadRepo, file=smellsCSVFilePath, cache=pmdCacheFile))
     print(str.format("PMD complete. Data saved to '{smellsCSVFilePath}'.", smellsCSVFilePath=smellsCSVFilePath))
 
     # Get number of commits per author

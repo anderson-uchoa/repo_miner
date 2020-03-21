@@ -1,2 +1,5 @@
 https://github.com/apache/spark
 https://github.com/apache/kafka
+https://github.com/apache/cassandra
+https://github.com/apache/zookeeper
+https://github.com/apache/hive

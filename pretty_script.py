@@ -15,8 +15,8 @@ import re
 # ================================================================================
 # GLOBAL VARABLES
 # ================================================================================
-repo_dir = 'TEST_DUMP'
-repo_file = 'repos.txt'
+repo_dir = 'DUMP' # directory where all folder and files will be generated
+repo_file = 'github_repos.txt' # text file with a list of GitHub repo URLs (one per line)
 
 
 # ================================================================================

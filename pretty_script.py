@@ -140,16 +140,16 @@ for gitURL in lines:
     downloadRepo = newRepo + '/' + projectName + '_repo'  
 
     # Clone repo into directory
-    #cloneRepo(gitURL,downloadRepo)
+    cloneRepo(gitURL,downloadRepo)
 
     # Create CSV file for commits and write info into commit file
-    #generateCommitsCSVFile(newRepo,projectName,downloadRepo)
+    generateCommitsCSVFile(newRepo,projectName,downloadRepo)
 
     # Run PMD and save results into CSV file
-    #generatePMDOutputCSVFile(newRepo,projectName,downloadRepo)
+    generatePMDOutputCSVFile(newRepo,projectName,downloadRepo)
 
     # Get number of commits per author (CSV seperated by TABS)
-    #generateNbCommitsPerAuthorCSVFile(newRepo,projectName,downloadRepo)
+    generateNbCommitsPerAuthorCSVFile(newRepo,projectName,downloadRepo)
 
     # Get a list of all files in repo (text file)
     listOfFilesInRepo = generateListOfAllFilesTextFile(newRepo,projectName,downloadRepo)

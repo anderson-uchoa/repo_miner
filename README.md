@@ -1,8 +1,8 @@
 ### MGL843 - Final Project - README
 #### Author: Mario Morra
-#### GitHub: https://github.com/mariomorra/python_repo_miner/
+#### GitHub: https://github.com/mariomorra/repo_miner/
 
-This project downloads projects from GitHub (5 Apache Java projects by default) and generates CSV files with PyDriller and PMD for the purpose of analysis of design code smells.
+This project downloads projects from GitHub (5 Apache projects by default) and generates CSV files with PyDriller and PMD for the purpose of analysis of design code smells. The script is written in Python but is made for analysing Java projects.
 
 Here are the steps to follow in order to properly run the script. First, some things need to be installed (if not done already).
 

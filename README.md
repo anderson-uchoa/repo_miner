@@ -2,7 +2,9 @@
 #### Author: Mario Morra
 #### GitHub: https://github.com/mariomorra/python_repo_miner/
 
-The following steps should be followed to run the script. First, some things need to be installed (if not done already).
+This project downloads projects from GitHub (5 Apache Java projects by default) and generates CSV files with PyDriller and PMD for the purpose of analysis of design code smells.
+
+Here are the steps to follow in order to properly run the script. First, some things need to be installed (if not done already).
 
 
 ### 1) Install Python 3.4+
@@ -22,8 +24,8 @@ The following steps should be followed to run the script. First, some things nee
 ### 3) Install Git
 > https://git-scm.com/downloads
 
--Note: if on Windows, Git should be added to the PATH variable
--Example: `C:\Program Files\Git\cmd`
+- Note: if on Windows, Git should be added to the PATH variable
+- Example: `C:\Program Files\Git\cmd`
 
 
 ### 4) Install necessary packages using pip (GitPython and PyDriller)
@@ -45,9 +47,9 @@ On Windows, go in the folder containing the script and open a new command prompt
 ```
 
 ### Notes
-- If desired, you can change the dump folder or GitHub repo text file. By default, the script will look in the local folder for a text file called `github_repos.txt` and a folder named `DUMP`. If you wish to change this for whatever reason, you can do so by changing the 2 global variables at the beginning of the script. You can write the full path to the desired file / folder.
+- If desired, you can change the dump folder or GitHub repo text file. By default, the script will look in the local folder for a text file called `github_repos.txt` and a folder named `DUMP`. If you wish to change this for whatever reason, you can do so by changing the 2 global variables at the beginning of the script. You can write the full path to the desired file / folder. Obviously, since this project uses PMD to analyse the repos and ignores non-Java files, the repos to download should be Java projects.
 - The script is very verbose. If you wish to remove the comments, you must comment out each "print" line in the script. However, the PMD output is huge and unfortunately cannot be disabled.
-- At the end of the script's execution, you should see a folder for each repo in the "github_repos.txt" file labeled with the project name. In each of these folders, you should find:
+- At the end of the script's execution, in the `DUMP` folder, you should see a folder for each repo in the `github_repos.txt` file labeled with the project's name. In each of these folders, you should find:
   - `ProjectName_repo`: a folder containing the entire cloned repo
   - `ProjectName_all_files_in_repo.txt`: a text file containing the list of all files in the repo
   - `ProjectName_commits.csv`: a CSV file containing a list of all modifications (and commits) in the entire project
